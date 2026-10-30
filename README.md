@@ -36,6 +36,21 @@ The app reads `SleepDisabled` from `pmset -g` when you open the menu and every 1
 
 ## Install
 
+### Download the app
+
+1. Download `SlopCaffeinate.zip` from the [latest release](https://github.com/Luaneo/slop-caffeinate/releases/latest) and unzip it.
+2. Drag `SlopCaffeinate.app` into `/Applications`.
+3. Open it. macOS will block it the first time. The app isn't notarized, because notarization needs a paid Apple developer account.
+4. Open System Settings > Privacy & Security, scroll down to the message about SlopCaffeinate and click "Open Anyway".
+
+If you'd rather skip steps 3 and 4, run this once:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/SlopCaffeinate.app
+```
+
+### Build from source
+
 You need the Xcode Command Line Tools for `swiftc`. Run `xcode-select --install` if you don't have them.
 
 ```sh
@@ -44,11 +59,13 @@ cd slop-caffeinate
 ./build.sh --install
 ```
 
-This builds the app, signs it ad hoc, copies it to `/Applications` and launches it. After that you can start it from Launchpad or Spotlight like any other app. Plain `./build.sh` only builds into `build/`.
+This builds the app, signs it ad hoc, copies it to `/Applications` and launches it. macOS doesn't quarantine apps you build yourself, so there's no Gatekeeper prompt. Plain `./build.sh` only builds into `build/`.
 
-"Launch at Login" is in the menu. macOS may ask you to approve it in System Settings > General > Login Items.
+### After installing
 
-I've only tested it on macOS 27. The code targets macOS 14 and later.
+Start it from Launchpad or Spotlight like any other app. "Launch at Login" is in the menu. macOS may ask you to approve it in System Settings > General > Login Items.
+
+The app is a universal binary for Apple silicon and Intel and targets macOS 14 and later. I've only run it on macOS 27 on Apple silicon.
 
 ## The password prompt
 

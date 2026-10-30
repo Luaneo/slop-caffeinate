@@ -26,7 +26,12 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 PLIST
 
 cp -R Resources/*.lproj "$APP/Contents/Resources/"
-swiftc -O -swift-version 5 -o "$APP/Contents/MacOS/SlopCaffeinate" Sources/main.swift
+# Universal binary. Without an explicit -target, swiftc would require the macOS version of the build machine.
+for arch in arm64 x86_64; do
+    swiftc -O -swift-version 5 -target "$arch-apple-macos14.0" -o "build/SlopCaffeinate-$arch" Sources/main.swift
+done
+lipo -create build/SlopCaffeinate-arm64 build/SlopCaffeinate-x86_64 -output "$APP/Contents/MacOS/SlopCaffeinate"
+rm build/SlopCaffeinate-arm64 build/SlopCaffeinate-x86_64
 codesign --force --sign - "$APP"
 echo "Built $APP"
 
