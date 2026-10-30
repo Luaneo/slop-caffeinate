@@ -44,7 +44,7 @@ cd slop-caffeinate
 ./build.sh --install
 ```
 
-This builds the app, signs it ad hoc, copies it to `~/Applications` and launches it. Plain `./build.sh` only builds into `build/`.
+This builds the app, signs it ad hoc, copies it to `/Applications` and launches it. After that you can start it from Launchpad or Spotlight like any other app. Plain `./build.sh` only builds into `build/`.
 
 "Launch at Login" is in the menu. macOS may ask you to approve it in System Settings > General > Login Items.
 
@@ -69,7 +69,7 @@ sudo matches the full command line, so only these four commands run without a pa
 Turn the switch off and untick "Launch at Login" first. Then:
 
 ```sh
-rm -rf ~/Applications/SlopCaffeinate.app
+rm -rf /Applications/SlopCaffeinate.app
 sudo rm -f /etc/sudoers.d/slop-caffeinate
 ```
 

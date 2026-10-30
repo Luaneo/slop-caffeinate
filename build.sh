@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Builds SlopCaffeinate.app. With --install, also copies it to ~/Applications and launches it.
+# Builds SlopCaffeinate.app. With --install, also copies it to /Applications and launches it.
 set -euo pipefail
 cd "${0:A:h}"
 
@@ -32,9 +32,8 @@ echo "Built $APP"
 
 if [[ "${1:-}" == "--install" ]]; then
     pkill -x SlopCaffeinate || true
-    rm -rf ~/Applications/SlopCaffeinate.app
-    mkdir -p ~/Applications
-    cp -R "$APP" ~/Applications/
-    open ~/Applications/SlopCaffeinate.app
-    echo "Installed ~/Applications/SlopCaffeinate.app"
+    rm -rf /Applications/SlopCaffeinate.app
+    cp -R "$APP" /Applications/
+    open /Applications/SlopCaffeinate.app
+    echo "Installed /Applications/SlopCaffeinate.app"
 fi
