@@ -1,0 +1,16 @@
+"Stay Awake with Lid Closed" = "Не спать с закрытой крышкой";
+"Launch at Login" = "Запускать при входе";
+"Quit" = "Выйти";
+"Sleep is off, safe to close the lid" = "Сон отключён — можно закрывать крышку";
+"Normal mode, the Mac sleeps when closed" = "Обычный режим — Mac уснёт при закрытии";
+"Couldn't read pmset" = "Не удалось прочитать pmset";
+"Staying awake" = "Сон отключён";
+"Normal sleep" = "Обычный режим";
+"SlopCaffeinate: sleep is off" = "SlopCaffeinate: сон отключён";
+"SlopCaffeinate: normal mode" = "SlopCaffeinate: обычный режим";
+"Administrator Access Required" = "Нужны права администратора";
+"Allow Without Password" = "Разрешить без пароля";
+"Just This Once" = "Только сейчас";
+"Cancel" = "Отмена";
+"sudoers.explanation" = "pmset меняет системные настройки сна и работает только через sudo.\n\nМожно один раз разрешить запускать без пароля только эти команды:\n%1$@\n\nПравило будет записано в %2$@.";
+"sudoers.notIncluded" = "Правило установлено, но sudo его не видит. Проверьте, что /etc/sudoers содержит #includedir /private/etc/sudoers.d.";

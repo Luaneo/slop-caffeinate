@@ -1,0 +1,2 @@
+"sudoers.explanation" = "pmset changes system sleep settings and only works through sudo.\n\nYou can allow these commands, and only these, to run without a password:\n%1$@\n\nThe rule goes into %2$@.";
+"sudoers.notIncluded" = "The rule is installed, but sudo doesn't pick it up. Check that /etc/sudoers contains #includedir /private/etc/sudoers.d.";
